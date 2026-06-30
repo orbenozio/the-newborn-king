@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.orbenozio.crossroads": {
-      "version": "https://github.com/orbenozio/Crossroads.git?path=/unity-package#v0.1.1",
+      "version": "https://github.com/orbenozio/Crossroads.git?path=/unity-package#v0.2.0",
       "depth": 0,
       "source": "git",
       "dependencies": {
@@ -9,7 +9,7 @@
         "com.unity.inputsystem": "1.14.0",
         "com.unity.nuget.newtonsoft-json": "3.2.1"
       },
-      "hash": "6dc985bd4297ec7bd5c74cffa4a4aa2435ebbb03"
+      "hash": "303b574ec0a70c0bbb04a206513640dcdfba47cb"
     },
     "com.orbenozio.unity-agent-bridge": {
       "version": "https://github.com/orbenozio/unity-agent-bridge.git?path=/unity-package#v0.2.0",
