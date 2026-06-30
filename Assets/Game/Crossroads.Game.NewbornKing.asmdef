@@ -1,0 +1,14 @@
+{
+    "name": "Crossroads.Game.NewbornKing",
+    "rootNamespace": "Crossroads.Game.NewbornKing",
+    "references": ["Crossroads.Engine", "Crossroads.UI"],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

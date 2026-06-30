@@ -1,0 +1,1210 @@
+{
+  "schemaVersion": 1,
+  "startNodeId": "intro_01",
+  "maxTurns": 14,
+  "nodes": [
+    {
+      "id": "intro_01",
+      "speaker": "narrator",
+      "body": "The old king is dead. His heir is three months old, and the regency is yours.",
+      "choices": [
+        {
+          "side": "left",
+          "label": "Rule with caution",
+          "effects": [
+            {
+              "resource": "money",
+              "delta": -1
+            },
+            {
+              "resource": "sanity",
+              "delta": 1
+            }
+          ]
+        },
+        {
+          "side": "right",
+          "label": "Seize the moment",
+          "effects": [
+            {
+              "resource": "money",
+              "delta": 1
+            },
+            {
+              "resource": "sanity",
+              "delta": -1
+            }
+          ],
+          "setFlags": {
+            "ambitious": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "night_cry",
+      "speaker": "nurse",
+      "body": "The heir wails at midnight. The wet-nurse is fast asleep.",
+      "choices": [
+        {
+          "side": "left",
+          "label": "Tend the child yourself",
+          "effects": [
+            {
+              "resource": "sleep",
+              "delta": -2
+            },
+            {
+              "resource": "baby",
+              "delta": 1
+            }
+          ]
+        },
+        {
+          "side": "right",
+          "label": "Let the nurse sleep",
+          "effects": [
+            {
+              "resource": "sanity",
+              "delta": -1
+            },
+            {
+              "resource": "baby",
+              "delta": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "treasurer",
+      "speaker": "treasurer",
+      "body": "The treasurer bows low. 'Majesty, the coffers run thin.'",
+      "appearWhen": {
+        "allOf": [
+          {
+            "resource": "money",
+            "op": "<=",
+            "value": 4
+          }
+        ]
+      },
+      "choices": [
+        {
+          "side": "left",
+          "label": "Raise the taxes",
+          "effects": [
+            {
+              "resource": "money",
+              "delta": 2
+            },
+            {
+              "resource": "sanity",
+              "delta": -1
+            }
+          ],
+          "setFlags": {
+            "taxed": true
+          }
+        },
+        {
+          "side": "right",
+          "label": "Cut the court feasts",
+          "effects": [
+            {
+              "resource": "money",
+              "delta": 1
+            },
+            {
+              "resource": "baby",
+              "delta": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wet_nurse_quits",
+      "speaker": "nurse",
+      "body": "The wet-nurse threatens to leave for a kinder house.",
+      "appearWhen": {
+        "allOf": [
+          {
+            "resource": "baby",
+            "op": "<=",
+            "value": 4
+          }
+        ]
+      },
+      "choices": [
+        {
+          "side": "left",
+          "label": "Beg her to stay",
+          "effects": [
+            {
+              "resource": "money",
+              "delta": -1
+            },
+            {
+              "resource": "baby",
+              "delta": 2
+            }
+          ]
+        },
+        {
+          "side": "right",
+          "label": "Dismiss her",
+          "effects": [
+            {
+              "resource": "sanity",
+              "delta": -1
+            },
+            {
+              "resource": "baby",
+              "delta": -2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rival_noble",
+      "speaker": "varic",
+      "body": "Lord Varic eyes the throne, smiling a touch too kindly.",
+      "choices": [
+        {
+          "side": "left",
+          "label": "Befriend him",
+          "effects": [
+            {
+              "resource": "sanity",
+              "delta": -1
+            },
+            {
+              "resource": "money",
+              "delta": -1
+            }
+          ],
+          "setFlags": {
+            "allied_varic": true
+          }
+        },
+        {
+          "side": "right",
+          "label": "Send him from court",
+          "effects": [
+            {
+              "resource": "sanity",
+              "delta": 1
+            }
+          ],
+          "setFlags": {
+            "spurned_varic": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "varic_plot",
+      "speaker": "guard",
+      "body": "Varic's men are seen lurking near the nursery after dark.",
+      "appearWhen": {
+        "allOf": [
+          {
+            "flag": "spurned_varic",
+            "is": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "side": "left",
+          "label": "Double the guard",
+          "effects": [
+            {
+              "resource": "money",
+              "delta": -2
+            },
+            {
+              "resource": "baby",
+              "delta": 1
+            }
+          ]
+        },
+        {
+          "side": "right",
+          "label": "Dismiss the rumor",
+          "effects": [
+            {
+              "resource": "baby",
+              "delta": -2
+            },
+            {
+              "resource": "sanity",
+              "delta": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "physician",
+      "speaker": "physician",
+      "body": "The court physician offers a costly tonic for the heir's health.",
+      "appearWhen": {
+        "allOf": [
+          {
+            "resource": "baby",
+            "op": "<=",
+            "value": 5
+          }
+        ]
+      },
+      "choices": [
+        {
+          "side": "left",
+          "label": "Pay for the tonic",
+          "effects": [
+            {
+              "resource": "money",
+              "delta": -2
+            },
+            {
+              "resource": "baby",
+              "delta": 2
+            }
+          ]
+        },
+        {
+          "side": "right",
+          "label": "Trust the child's strength",
+          "effects": [
+            {
+              "resource": "baby",
+              "delta": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sleepless",
+      "speaker": "narrator",
+      "body": "You have not slept in days. The torchlight blurs and doubles.",
+      "appearWhen": {
+        "allOf": [
+          {
+            "resource": "sleep",
+            "op": "<=",
+            "value": 4
+          }
+        ]
+      },
+      "choices": [
+        {
+          "side": "left",
+          "label": "Steal an hour of rest",
+          "effects": [
+            {
+              "resource": "sleep",
+              "delta": 2
+            },
+            {
+              "resource": "money",
+              "delta": -1
+            }
+          ]
+        },
+        {
+          "side": "right",
+          "label": "Push on without sleep",
+          "effects": [
+            {
+              "resource": "sanity",
+              "delta": -2
+            },
+            {
+              "resource": "sleep",
+              "delta": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "festival",
+      "speaker": "narrator",
+      "body": "The people clamor for a festival to honor the new heir.",
+      "choices": [
+        {
+          "side": "left",
+          "label": "Throw it grandly",
+          "effects": [
+            {
+              "resource": "money",
+              "delta": -3
+            },
+            {
+              "resource": "sanity",
+              "delta": 2
+            },
+            {
+              "resource": "baby",
+              "delta": 1
+            }
+          ],
+          "setFlags": {
+            "beloved": true
+          }
+        },
+        {
+          "side": "right",
+          "label": "Keep it modest",
+          "effects": [
+            {
+              "resource": "money",
+              "delta": -1
+            },
+            {
+              "resource": "sanity",
+              "delta": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nightmare",
+      "speaker": "narrator",
+      "body": "You wake screaming from a dream of crowns and knives.",
+      "appearWhen": {
+        "allOf": [
+          {
+            "resource": "sanity",
+            "op": "<=",
+            "value": 4
+          }
+        ]
+      },
+      "choices": [
+        {
+          "side": "left",
+          "label": "Confide in the priest",
+          "effects": [
+            {
+              "resource": "sanity",
+              "delta": 2
+            },
+            {
+              "resource": "money",
+              "delta": -1
+            }
+          ],
+          "setFlags": {
+            "pious": true
+          }
+        },
+        {
+          "side": "right",
+          "label": "Tell no one",
+          "effects": [
+            {
+              "resource": "sanity",
+              "delta": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ambition_offer",
+      "speaker": "general",
+      "body": "A general kneels. 'Why crown an infant? The realm would crown YOU.'",
+      "appearWhen": {
+        "allOf": [
+          {
+            "flag": "ambitious",
+            "is": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "side": "left",
+          "label": "Refuse, stay loyal",
+          "effects": [
+            {
+              "resource": "sanity",
+              "delta": 1
+            },
+            {
+              "resource": "baby",
+              "delta": 1
+            }
+          ],
+          "setFlags": {
+            "loyal": true
+          }
+        },
+        {
+          "side": "right",
+          "label": "Hear him out",
+          "effects": [
+            {
+              "resource": "sanity",
+              "delta": -2
+            },
+            {
+              "resource": "baby",
+              "delta": -2
+            }
+          ],
+          "setFlags": {
+            "usurper": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "teething",
+      "speaker": "nurse",
+      "body": "The heir is teething and cries for three nights running.",
+      "choices": [
+        {
+          "side": "left",
+          "label": "Hold him through it",
+          "effects": [
+            {
+              "resource": "sleep",
+              "delta": -2
+            },
+            {
+              "resource": "sanity",
+              "delta": -1
+            },
+            {
+              "resource": "baby",
+              "delta": 2
+            }
+          ]
+        },
+        {
+          "side": "right",
+          "label": "Hire more nurses",
+          "effects": [
+            {
+              "resource": "money",
+              "delta": -2
+            },
+            {
+              "resource": "baby",
+              "delta": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "harvest",
+      "speaker": "envoy",
+      "body": "The taxed farmers send a bitter envoy to the gates.",
+      "appearWhen": {
+        "allOf": [
+          {
+            "flag": "taxed",
+            "is": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "side": "left",
+          "label": "Lower the tax",
+          "effects": [
+            {
+              "resource": "money",
+              "delta": -2
+            },
+            {
+              "resource": "sanity",
+              "delta": 1
+            }
+          ]
+        },
+        {
+          "side": "right",
+          "label": "Hold firm",
+          "effects": [
+            {
+              "resource": "sanity",
+              "delta": -1
+            }
+          ],
+          "setFlags": {
+            "tyrant": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "first_word",
+      "speaker": "narrator",
+      "body": "The heir speaks his first word. The whole court holds its breath.",
+      "choices": [
+        {
+          "side": "left",
+          "label": "Celebrate quietly",
+          "effects": [
+            {
+              "resource": "sanity",
+              "delta": 1
+            },
+            {
+              "resource": "baby",
+              "delta": 1
+            }
+          ]
+        },
+        {
+          "side": "right",
+          "label": "Proclaim it across the realm",
+          "effects": [
+            {
+              "resource": "money",
+              "delta": -1
+            },
+            {
+              "resource": "sanity",
+              "delta": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "regency_review",
+      "speaker": "council",
+      "body": "The high council convenes to review your regency.",
+      "choices": [
+        {
+          "side": "left",
+          "label": "Present your record humbly",
+          "effects": [
+            {
+              "resource": "sanity",
+              "delta": 1
+            }
+          ]
+        },
+        {
+          "side": "right",
+          "label": "Demand more power",
+          "effects": [
+            {
+              "resource": "sanity",
+              "delta": -1
+            },
+            {
+              "resource": "money",
+              "delta": 1
+            }
+          ],
+          "setFlags": {
+            "ambitious": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "envoy_marriage",
+      "speaker": "envoy",
+      "body": "A great house offers to betroth their daughter to the infant heir.",
+      "choices": [
+        {
+          "side": "left",
+          "label": "Seal the betrothal",
+          "effects": [
+            {
+              "resource": "money",
+              "delta": 1
+            },
+            {
+              "resource": "baby",
+              "delta": 1
+            }
+          ],
+          "setFlags": {
+            "betrothed": true
+          }
+        },
+        {
+          "side": "right",
+          "label": "Keep the heir free",
+          "effects": [
+            {
+              "resource": "sanity",
+              "delta": 1
+            },
+            {
+              "resource": "money",
+              "delta": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "plague",
+      "speaker": "physician",
+      "body": "A fever spreads through the lower city, creeping toward the keep.",
+      "choices": [
+        {
+          "side": "left",
+          "label": "Quarantine the gates",
+          "effects": [
+            {
+              "resource": "money",
+              "delta": -2
+            },
+            {
+              "resource": "baby",
+              "delta": 1
+            }
+          ]
+        },
+        {
+          "side": "right",
+          "label": "Let trade flow",
+          "effects": [
+            {
+              "resource": "baby",
+              "delta": -2
+            },
+            {
+              "resource": "sanity",
+              "delta": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "priest_chapel",
+      "speaker": "priest",
+      "body": "The bishop asks the crown to fund a new chapel for the heir's blessing.",
+      "choices": [
+        {
+          "side": "left",
+          "label": "Fund the chapel",
+          "effects": [
+            {
+              "resource": "money",
+              "delta": -2
+            },
+            {
+              "resource": "sanity",
+              "delta": 1
+            }
+          ],
+          "setFlags": {
+            "pious": true
+          }
+        },
+        {
+          "side": "right",
+          "label": "Spend on the keep instead",
+          "effects": [
+            {
+              "resource": "sanity",
+              "delta": -1
+            },
+            {
+              "resource": "money",
+              "delta": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bandits",
+      "speaker": "guard",
+      "body": "Bandits prey on the trade roads, and merchants beg for protection.",
+      "choices": [
+        {
+          "side": "left",
+          "label": "Send out the guard",
+          "effects": [
+            {
+              "resource": "money",
+              "delta": -1
+            },
+            {
+              "resource": "sleep",
+              "delta": -1
+            }
+          ]
+        },
+        {
+          "side": "right",
+          "label": "Pay them to leave",
+          "effects": [
+            {
+              "resource": "money",
+              "delta": -2
+            },
+            {
+              "resource": "sanity",
+              "delta": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "beggar",
+      "speaker": "narrator",
+      "body": "A starving crowd gathers at the gates, crying out to the regent.",
+      "choices": [
+        {
+          "side": "left",
+          "label": "Open the granary",
+          "effects": [
+            {
+              "resource": "money",
+              "delta": -2
+            },
+            {
+              "resource": "sanity",
+              "delta": 1
+            }
+          ],
+          "setFlags": {
+            "beloved": true
+          }
+        },
+        {
+          "side": "right",
+          "label": "Bar the gates",
+          "effects": [
+            {
+              "resource": "sanity",
+              "delta": -1
+            },
+            {
+              "resource": "baby",
+              "delta": -1
+            }
+          ],
+          "setFlags": {
+            "tyrant": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "spy",
+      "speaker": "varic",
+      "body": "A courtier offers to build you a web of spies among the nobles.",
+      "appearWhen": {
+        "allOf": [
+          {
+            "resource": "sanity",
+            "op": "<=",
+            "value": 5
+          }
+        ]
+      },
+      "choices": [
+        {
+          "side": "left",
+          "label": "Refuse such methods",
+          "effects": [
+            {
+              "resource": "sanity",
+              "delta": 1
+            }
+          ]
+        },
+        {
+          "side": "right",
+          "label": "Build the network",
+          "effects": [
+            {
+              "resource": "money",
+              "delta": -1
+            },
+            {
+              "resource": "sanity",
+              "delta": -1
+            }
+          ],
+          "setFlags": {
+            "tyrant": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "tutor",
+      "speaker": "council",
+      "body": "It is time to choose a tutor for the growing heir.",
+      "appearWhen": {
+        "allOf": [
+          {
+            "resource": "baby",
+            "op": ">=",
+            "value": 5
+          }
+        ]
+      },
+      "choices": [
+        {
+          "side": "left",
+          "label": "A gentle scholar",
+          "effects": [
+            {
+              "resource": "baby",
+              "delta": 1
+            },
+            {
+              "resource": "money",
+              "delta": -1
+            }
+          ]
+        },
+        {
+          "side": "right",
+          "label": "A stern master",
+          "effects": [
+            {
+              "resource": "baby",
+              "delta": 1
+            },
+            {
+              "resource": "sanity",
+              "delta": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "drought",
+      "speaker": "envoy",
+      "body": "A dry summer withers the fields. The granaries will not fill this year.",
+      "choices": [
+        {
+          "side": "left",
+          "label": "Ration the grain",
+          "effects": [
+            {
+              "resource": "money",
+              "delta": 1
+            },
+            {
+              "resource": "baby",
+              "delta": -1
+            }
+          ]
+        },
+        {
+          "side": "right",
+          "label": "Buy foreign grain",
+          "effects": [
+            {
+              "resource": "money",
+              "delta": -2
+            },
+            {
+              "resource": "baby",
+              "delta": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "masquerade",
+      "speaker": "narrator",
+      "body": "The court holds a masque. You could slip away, or lose yourself in it.",
+      "choices": [
+        {
+          "side": "left",
+          "label": "Slip away to rest",
+          "effects": [
+            {
+              "resource": "sleep",
+              "delta": 2
+            },
+            {
+              "resource": "sanity",
+              "delta": 1
+            }
+          ]
+        },
+        {
+          "side": "right",
+          "label": "Revel until dawn",
+          "effects": [
+            {
+              "resource": "sleep",
+              "delta": -2
+            },
+            {
+              "resource": "sanity",
+              "delta": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "war_threat",
+      "speaker": "general",
+      "body": "A neighboring lord masses troops along the border.",
+      "choices": [
+        {
+          "side": "left",
+          "label": "Sue for peace",
+          "effects": [
+            {
+              "resource": "money",
+              "delta": -2
+            },
+            {
+              "resource": "sanity",
+              "delta": 1
+            }
+          ]
+        },
+        {
+          "side": "right",
+          "label": "Muster for war",
+          "effects": [
+            {
+              "resource": "money",
+              "delta": -1
+            },
+            {
+              "resource": "sleep",
+              "delta": -2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "coronation_rumor",
+      "speaker": "council",
+      "body": "Whispers spread that the regent means to keep the crown for good.",
+      "appearWhen": {
+        "allOf": [
+          {
+            "flag": "ambitious",
+            "is": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "side": "left",
+          "label": "Deny them firmly",
+          "effects": [
+            {
+              "resource": "sanity",
+              "delta": 1
+            },
+            {
+              "resource": "baby",
+              "delta": 1
+            }
+          ]
+        },
+        {
+          "side": "right",
+          "label": "Let them spread",
+          "effects": [
+            {
+              "resource": "sanity",
+              "delta": -1
+            },
+            {
+              "resource": "money",
+              "delta": 1
+            }
+          ],
+          "setFlags": {
+            "usurper": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "midwife",
+      "speaker": "nurse",
+      "body": "The old midwife offers a folk remedy for the heir's colic.",
+      "choices": [
+        {
+          "side": "left",
+          "label": "Trust her craft",
+          "effects": [
+            {
+              "resource": "baby",
+              "delta": 1
+            },
+            {
+              "resource": "sleep",
+              "delta": -1
+            }
+          ]
+        },
+        {
+          "side": "right",
+          "label": "Summon the physician",
+          "effects": [
+            {
+              "resource": "money",
+              "delta": -1
+            },
+            {
+              "resource": "baby",
+              "delta": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "winter",
+      "speaker": "narrator",
+      "body": "A hard winter sets in, and the wood stores must be shared or hoarded.",
+      "choices": [
+        {
+          "side": "left",
+          "label": "Share with the city",
+          "effects": [
+            {
+              "resource": "money",
+              "delta": -1
+            },
+            {
+              "resource": "sanity",
+              "delta": 1
+            }
+          ],
+          "setFlags": {
+            "beloved": true
+          }
+        },
+        {
+          "side": "right",
+          "label": "Hoard for the court",
+          "effects": [
+            {
+              "resource": "money",
+              "delta": 1
+            },
+            {
+              "resource": "baby",
+              "delta": -1
+            },
+            {
+              "resource": "sanity",
+              "delta": -1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "when": {
+        "resource": "sleep",
+        "edge": "min"
+      },
+      "text": "Exhaustion takes you. You collapse on the nursery floor and do not rise.",
+      "image": "end-collapse"
+    },
+    {
+      "when": {
+        "resource": "sleep",
+        "edge": "max"
+      },
+      "text": "You retreat to your chambers and sleep while the realm forgets you.",
+      "image": "end-withdraw"
+    },
+    {
+      "when": {
+        "resource": "sanity",
+        "edge": "min"
+      },
+      "text": "Your mind shatters. At dawn they lead the regent away, raving.",
+      "image": "end-madness"
+    },
+    {
+      "when": {
+        "resource": "money",
+        "edge": "min"
+      },
+      "text": "The treasury runs dry. A court that cannot be paid does not stay loyal.",
+      "image": "end-bankrupt"
+    },
+    {
+      "when": {
+        "resource": "baby",
+        "edge": "min"
+      },
+      "text": "The heir withers under your care. The royal line ends, and so does your regency.",
+      "image": "end-heir"
+    },
+    {
+      "when": {
+        "flag": "usurper"
+      },
+      "text": "When the heir comes of age, the crown is already on your head. They name you king, and the child a footnote.",
+      "image": "end-usurper"
+    },
+    {
+      "when": {
+        "flag": "tyrant"
+      },
+      "text": "The heir comes of age into a realm ruled by fear. He inherits your enemies along with your throne.",
+      "image": "end-tyrant"
+    },
+    {
+      "when": {
+        "flag": "allied_varic"
+      },
+      "text": "Lord Varic stood with you to the end. The heir comes of age, and the two houses rule as one.",
+      "image": "end-allied"
+    },
+    {
+      "when": {
+        "flag": "betrothed"
+      },
+      "text": "The heir comes of age, betrothed to a great house, and inherits a kingdom secured by alliance.",
+      "image": "end-betrothed"
+    },
+    {
+      "when": {
+        "flag": "beloved"
+      },
+      "text": "The people line the streets as the heir comes of age. They loved the regent, and they love the king.",
+      "image": "end-beloved"
+    },
+    {
+      "when": {
+        "flag": "pious"
+      },
+      "text": "Under the church's blessing the heir comes of age, devout and secure upon a steady throne.",
+      "image": "end-pious"
+    },
+    {
+      "fallback": true,
+      "text": "The heir grows strong and wise, comes of age, and your regency passes into legend.",
+      "image": "end-legend"
+    }
+  ]
+}

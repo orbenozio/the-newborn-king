@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5fccb522c64eb14fbbb14981ff77a48, type: 3}
+  m_Name: theme
+  m_EditorClassIdentifier: Crossroads.UI::Crossroads.UI.Theme
+  background: {r: 0.11, g: 0.1, b: 0.115, a: 1}
+  card: {r: 0.21, g: 0.19, b: 0.2, a: 1}
+  text: {r: 0.96, g: 0.94, b: 0.88, a: 1}
+  accent: {r: 0.62, g: 0.5, b: 0.28, a: 1}
+  approaching: {r: 0.95, g: 0.75, b: 0.2, a: 1}
+  willBreak: {r: 0.85, g: 0.25, b: 0.25, a: 1}
+  keyArt: {fileID: 21300000, guid: 9d79f575b95c1894da16dd6a76b582ec, type: 3}
+  logo: {fileID: 21300000, guid: 4a3a0d915da0f574b829c3f90dfd6c15, type: 3}
+  cardArt: {fileID: 21300000, guid: 942bac21398d49c41bcb7afbbcdc4803, type: 3}
+  meterFrame: {fileID: 21300000, guid: 3eaf1695bb4a7cf4ab749af1d53fb0cb, type: 3}
+  speakerFrame: {fileID: 21300000, guid: c1d2e3f405162738495a6b7c8d9e0f11, type: 3}
+  buttonSprite: {fileID: 21300000, guid: f2f94610bbc96c44f84d2d24ce5f5dcb, type: 3}
+  menuIcon: {fileID: 21300000, guid: 4932847a1dd4ed14aacec9e82f4fa6f2, type: 3}
+  loadingArt: {fileID: 21300000, guid: 7c93a07b35521fb4daa4c07d9df1dbae, type: 3}
+  music: {fileID: 8300000, guid: 3da5973f93eb0df4fa023b4942bdbb3c, type: 3}
+  musicMenu: {fileID: 8300000, guid: 441fdabd9067f3242891155c3920aa31, type: 3}
+  swipeSfx: {fileID: 8300000, guid: df212c52ec69c454d8e934921ab27f7d, type: 3}
+  cardSfx: {fileID: 8300000, guid: 7d4ea43774903e34582b866a1cc9aa13, type: 3}
+  clickSfx: {fileID: 8300000, guid: a968acfe733b4c34b8e7f984f159b399, type: 3}
+  font: {fileID: 0}
+  tmpFont: {fileID: 11400000, guid: 93a3d5f4f92f01745a0afd124de8d7af, type: 2}
+  rightToLeft: 0
+  resourceLabels:
+  - id: baby
+    label: Heir
+    icon: {fileID: 21300000, guid: 7b65e0a27111d2a4bb71f533a3e27fbe, type: 3}
+  - id: money
+    label: 
+    icon: {fileID: 21300000, guid: 15d751ea7363c6f47904b18590c193d9, type: 3}
+  - id: sanity
+    label: 
+    icon: {fileID: 21300000, guid: 2dc94688836bc624e851d7335a1fe8cf, type: 3}
+  - id: sleep
+    label: 
+    icon: {fileID: 21300000, guid: 24c25aa6ff3311544a5ee02948ba18eb, type: 3}
+  speakers:
+  - id: varic
+    tint: {r: 0.55, g: 0.7, b: 0.95, a: 1}
+    icon: {fileID: 21300000, guid: b5b9c0a7be5bb6c4bb470ce3a8502283, type: 3}
+  - id: general
+    tint: {r: 0.8, g: 0.55, b: 0.5, a: 1}
+    icon: {fileID: 21300000, guid: 01e2afa3957368f46b0312cc7ae515b9, type: 3}
+  - id: priest
+    tint: {r: 0.92, g: 0.8, b: 0.45, a: 1}
+    icon: {fileID: 21300000, guid: fa79d26ee815e514eaef567c51993a36, type: 3}
+  - id: treasurer
+    tint: {r: 0.55, g: 0.82, b: 0.6, a: 1}
+    icon: {fileID: 21300000, guid: 32e474b450821c94798d538f5ba95a62, type: 3}
+  - id: council
+    tint: {r: 1, g: 1, b: 1, a: 1}
+    icon: {fileID: 21300000, guid: a0ef5f67328aff74999d013ba6ba70fe, type: 3}
+  - id: envoy
+    tint: {r: 1, g: 1, b: 1, a: 1}
+    icon: {fileID: 21300000, guid: 97e6f494d61445f4ab65be06c2c6a119, type: 3}
+  - id: guard
+    tint: {r: 1, g: 1, b: 1, a: 1}
+    icon: {fileID: 21300000, guid: f5da756db357e9141a7a5eee5b678ad0, type: 3}
+  - id: nurse
+    tint: {r: 1, g: 1, b: 1, a: 1}
+    icon: {fileID: 21300000, guid: 8d712717d9a452541b29c903e8598063, type: 3}
+  - id: physician
+    tint: {r: 1, g: 1, b: 1, a: 1}
+    icon: {fileID: 21300000, guid: 41fab1d3fb1890b40ae6578b5fee188b, type: 3}
+  endingArt:
+  - key: end-allied
+    art: {fileID: 21300000, guid: 6cf68cb208fe31147b796270a3809952, type: 3}
+  - key: end-bankrupt
+    art: {fileID: 21300000, guid: f591642aafb06914592ba89419a3c422, type: 3}
+  - key: end-beloved
+    art: {fileID: 21300000, guid: f6c0da87679b7084f94a577158928737, type: 3}
+  - key: end-betrothed
+    art: {fileID: 21300000, guid: dffc649f6bf6e8c4bbe167a2aee76857, type: 3}
+  - key: end-collapse
+    art: {fileID: 21300000, guid: 014f67818df1eba48b83b7a2789e543f, type: 3}
+  - key: end-heir
+    art: {fileID: 21300000, guid: 3eb67ca74a37d684ca73a048e10db15f, type: 3}
+  - key: end-legend
+    art: {fileID: 21300000, guid: d230ead82f29c5d45a8817346faa9c2f, type: 3}
+  - key: end-madness
+    art: {fileID: 21300000, guid: fa8cd40316c93a845923688fe7606e87, type: 3}
+  - key: end-pious
+    art: {fileID: 21300000, guid: 5d82bb6abf4646345bd8afc44f309414, type: 3}
+  - key: end-tyrant
+    art: {fileID: 21300000, guid: 7fefe5a65f467a840962e9a27224c187, type: 3}
+  - key: end-usurper
+    art: {fileID: 21300000, guid: 2df52ef5dcd74364b97c5cb082ed3e4e, type: 3}
+  - key: end-withdraw
+    art: {fileID: 21300000, guid: 2d49fe60b8c3dbb4ba1bbeb46e95b69a, type: 3}
