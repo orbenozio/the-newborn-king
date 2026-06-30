@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.orbenozio.crossroads": "https://github.com/orbenozio/Crossroads.git?path=/unity-package#v0.1.0",
+    "com.orbenozio.crossroads": "https://github.com/orbenozio/Crossroads.git?path=/unity-package#v0.1.1",
     "com.orbenozio.unity-agent-bridge": "https://github.com/orbenozio/unity-agent-bridge.git?path=/unity-package#v0.2.0",
     "com.unity.inputsystem": "1.14.0",
     "com.unity.nuget.newtonsoft-json": "3.2.1",
